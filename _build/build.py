@@ -302,7 +302,7 @@ history_body = """
        "The Round Table Lodge of Oxfordshire is warranted.",
        "Round Table Lodge of Oxfordshire No. 9509"),
     ev("1994", "Cardiff and North Essex",
-       "The Lodge of Round Table is founded in Cardiff, bringing the network to Wales. Louis Marchesi Lodge in Devon, named after the founder of Round Table, follows around the same time, and in December North Essex Round Table Lodge is warranted at Clacton-on-Sea.",
+       "The Lodge of Round Table is warranted on 9 March and consecrated on 3 June 1994 in the Duke of Connaught Temple at Cardiff Masonic Hall, bringing the network to Wales. Founded by W.Bro Dr Akram Baig with like-minded Masons, it takes its motto from Round Table: to <em>adopt</em> the principles of Freemasonry, <em>adapt</em> them to the friendship of Round Table, and so <em>improve</em> one&rsquo;s life. Louis Marchesi Lodge in Devon, named after the founder of Round Table, follows around the same time, and in December North Essex Round Table Lodge is warranted at Clacton-on-Sea.",
        "Lodge of Round Table No. 9549 &middot; Louis Marchesi Lodge No. 9558 &middot; North Essex Round Table Lodge No. 9578"),
     ev("1990s", "Ridings Tablers, Beverley",
        "Ridings Tablers Lodge brings the network to East Yorkshire.",
@@ -315,8 +315,14 @@ history_body = """
        "The Round Table Lodge of Middlesex hosts the Biennial Reunion.",
        "Hosted by No. 8301", kind="reunion"),
     ev("2006", "Biennial Reunion in Cardiff",
-       "The Lodge of Round Table hosts the Reunion in Cardiff for the first time, twelve years after the lodge was founded.",
+       "In July the Lodge of Round Table hosts the Reunion weekend in Cardiff, twelve years after the lodge was founded.",
        "Hosted by No. 9549", kind="reunion"),
+    ev("2008", "Biennial Reunion in Chester",
+       "The Round Table Lodge of South Cheshire hosts the weekend in Chester.",
+       "Hosted by No. 8787", kind="reunion"),
+    ev("2010", "Biennial Reunion in Lincoln",
+       "The Round Table Lodge of Lincolnshire hosts the weekend in the City of Lincoln. By now there are 46 Round Table lodges in England and Wales.",
+       "Hosted by No. 8240", kind="reunion"),
 ]) + era("Today", "", [
     ev("Now", "Almost fifty lodges",
        "There are now almost fifty Round Table lodges in England and Wales. Many no longer recruit only from Round Table, but they keep its traditions: fun and fellowship alongside service to the community, and a warm welcome for visitors. Every two years the lodges come together for the Biennial Reunion, a tradition that goes back many years, hosted in turn by one of the lodges.",
@@ -347,6 +353,7 @@ history_body = """
       <li><a href="https://www.somersetfreemasons.org/?p=1728">Somerset Tablers Lodge No. 9075</a></li>
       <li><a href="https://pglherts.org/province/lodges/round-table-lodge-of-hertfordshire/">Round Table Lodge of Hertfordshire No. 9221</a></li>
       <li><a href="https://henleyfreemasons.uk/round-table-thames-valley-lodge-no-9697/">Round Table Thames Valley Lodge No. 9697</a></li>
+      <li><em>The Reason Why: A History of the Masonic Province of South Wales</em> (South Wales Masonic History Group, 2012; ISBN 978-0-9571282-0-0), pp. 688&ndash;689: Lodge of Round Table No. 9549, compiled by W.Bro David Lewis, Secretary</li>
       <li>Louis Marchesi Lodge No. 9558: Reunion flyer and booking details, 2024</li>
     </ul>
   </div>
