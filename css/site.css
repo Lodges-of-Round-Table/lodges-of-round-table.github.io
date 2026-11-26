@@ -1,0 +1,119 @@
+/* Lodges of Round Table: one stylesheet, no framework. */
+:root {
+  --navy: #13233f;
+  --navy-2: #1d3461;
+  --gold: #b8913a;
+  --gold-soft: #f4ecda;
+  --ink: #1f2430;
+  --muted: #5d6472;
+  --paper: #ffffff;
+  --alt: #f6f4ef;
+  --line: #e3dfd5;
+  --radius: 10px;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font: 17px/1.65 var(--sans); color: var(--ink); background: var(--paper); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--navy-2); text-underline-offset: 3px; }
+a:hover { color: var(--gold); }
+h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.2; color: var(--navy); margin: 0 0 .6em; font-weight: 600; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+h3 { font-size: 1.35rem; }
+.wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+.narrow { width: min(760px, 100% - 2.5rem); }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 1rem; top: 1rem; z-index: 10; background: #fff; padding: .5rem 1rem; }
+
+/* Top bar */
+.topbar { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 5; }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; flex-wrap: wrap; padding: .4rem 0; }
+.brand { display: flex; align-items: center; gap: .6rem; color: #fff; text-decoration: none; font-family: var(--serif); font-size: 1.2rem; }
+.brand img { background: #fff; border-radius: 4px; padding: 2px; }
+.topbar nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem 1.4rem; }
+.topbar nav a { color: #dfe5f0; text-decoration: none; font-size: .95rem; padding: .3rem 0; border-bottom: 2px solid transparent; }
+.topbar nav a:hover, .topbar nav a[aria-current="page"] { color: #fff; border-bottom-color: var(--gold); }
+
+/* Hero */
+.hero {
+  --hero: none;
+  background: linear-gradient(180deg, rgba(10,20,40,.25), rgba(10,20,40,.75)), var(--hero) center/cover no-repeat, linear-gradient(135deg, var(--navy-2), var(--navy));
+  color: #fff; min-height: 52vh; display: flex; align-items: flex-end;
+}
+.hero-inner { padding: 4rem 0 3rem; }
+.hero h1 { color: #fff; font-size: clamp(2.2rem, 5vw, 3.6rem); max-width: 18ch; }
+.kicker { text-transform: uppercase; letter-spacing: .14em; font-size: .8rem; color: var(--gold-soft); margin: 0 0 .8rem; }
+.lede { font-size: 1.2rem; margin: 0; color: #e8ecf3; }
+.page-head { background: var(--navy-2); color: #fff; padding: 3rem 0 2.2rem; }
+.page-head h1 { color: #fff; margin: 0; font-size: clamp(2rem, 4vw, 2.8rem); }
+
+/* Notice + sub nav */
+.notice { background: var(--gold-soft); border-bottom: 1px solid #e6d6ae; }
+.notice p { margin: 0; padding: .9rem 0; font-size: .97rem; }
+.subnav { border-bottom: 1px solid var(--line); background: #fff; }
+.subnav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .2rem 1.6rem; }
+.subnav a { display: block; padding: .8rem 0; text-decoration: none; color: var(--muted); font-size: .95rem; }
+.subnav a:hover { color: var(--navy); }
+
+/* Sections */
+.section { padding: 4rem 0; }
+.section.alt { background: var(--alt); }
+.prose p, .prose ul { margin: 0 0 1.1em; }
+.prose ul { padding-left: 1.2em; }
+.prose li { margin-bottom: .45em; }
+.muted { color: var(--muted); }
+.slot { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; color: var(--gold); margin: 0 0 .4rem !important; font-weight: 600; }
+.btn { display: inline-block; background: var(--navy); color: #fff; padding: .7rem 1.25rem; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .95rem; }
+.btn:hover { background: var(--gold); color: #fff; }
+
+/* Cards */
+.cards { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.card { background: #fff; border-radius: var(--radius); overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 20px rgba(19,35,63,.07); display: flex; flex-direction: column; transition: transform .15s ease; }
+.card:hover { transform: translateY(-3px); color: inherit; }
+.card-img { --img: none; aspect-ratio: 16/9; background: var(--img) center/cover no-repeat, linear-gradient(135deg, var(--navy-2), var(--navy)); }
+.card-body { padding: 1.3rem 1.4rem 1.5rem; }
+.card-body p { margin: 0 0 .8rem; color: var(--muted); font-size: .97rem; }
+.more { color: var(--navy-2); font-weight: 600; font-size: .95rem; }
+
+/* Split rows (itinerary, accommodation) */
+.split { padding: 3.5rem 0; }
+.split:nth-of-type(even) { background: var(--alt); }
+.split-inner { display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: center; }
+.split.flip .prose { order: 2; }
+.photo { margin: 0; border-radius: var(--radius); overflow: hidden; background: linear-gradient(135deg, var(--navy-2), var(--navy)); min-height: 220px; box-shadow: 0 8px 28px rgba(19,35,63,.12); }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.day-head { background: var(--navy); color: #fff; padding: 1.6rem 0; }
+.day-head h2 { color: #fff; margin: 0; }
+.day-head p { margin: .2rem 0 0; color: var(--gold-soft); }
+
+/* Lodges table */
+.filter { display: block; margin: 0 0 1rem; font-weight: 600; color: var(--navy); }
+.filter input { display: block; margin-top: .4rem; width: min(420px, 100%); padding: .65rem .8rem; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+.table-wrap { overflow-x: auto; }
+table.lodges { width: 100%; border-collapse: collapse; font-size: .97rem; }
+.lodges th, .lodges td { text-align: left; padding: .75rem .9rem; border-bottom: 1px solid var(--line); }
+.lodges th { background: var(--alt); font-family: var(--serif); color: var(--navy); }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; }
+.contact-card { background: var(--alt); border-radius: var(--radius); padding: 1.6rem 1.8rem; border-top: 4px solid var(--gold); }
+.contact-card p { margin: 0 0 .8rem; }
+
+/* Footer */
+.site-foot { background: var(--navy); color: #cfd6e3; padding: 2.5rem 0; font-size: .95rem; }
+.site-foot a { color: #fff; }
+.foot-inner { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; align-items: center; justify-content: space-between; }
+.social { list-style: none; display: flex; gap: 1.2rem; padding: 0; margin: 0; }
+.copy { margin: 0; width: 100%; color: #9aa6bb; font-size: .85rem; }
+
+@media (max-width: 820px) {
+  .split-inner, .contact { grid-template-columns: 1fr; gap: 1.8rem; }
+  .split.flip .prose { order: 0; }
+  .hero { min-height: 42vh; }
+  .section { padding: 3rem 0; }
+}
+.check { color: var(--gold); font-weight: 700; cursor: help; }
+.small { font-size: .88rem; }
+.lodges td a { white-space: nowrap; }
