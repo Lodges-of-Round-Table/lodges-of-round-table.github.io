@@ -310,6 +310,13 @@ history_body = """
     ev("1999", "Thames Valley and Nairobi",
        "Round Table Thames Valley Lodge is established at Henley-on-Thames as a home for Tablers, ex-Tablers and those who &lsquo;should have been Tablers&rsquo;. The same year a Round Table Lodge is warranted in Nairobi, Kenya.",
        "Round Table Thames Valley Lodge No. 9697 &middot; Round Table Lodge No. 9711"),
+]) + era("The 2000s", "", [
+    ev("2004", "Biennial Reunion hosted by Middlesex",
+       "The Round Table Lodge of Middlesex hosts the Biennial Reunion.",
+       "Hosted by No. 8301", kind="reunion"),
+    ev("2006", "Biennial Reunion in Cardiff",
+       "The Lodge of Round Table hosts the Reunion in Cardiff for the first time, twelve years after the lodge was founded.",
+       "Hosted by No. 9549", kind="reunion"),
 ]) + era("Today", "", [
     ev("Now", "Almost fifty lodges",
        "There are now almost fifty Round Table lodges in England and Wales. Many no longer recruit only from Round Table, but they keep its traditions: fun and fellowship alongside service to the community, and a warm welcome for visitors. Every two years the lodges come together for the Biennial Reunion, a tradition that goes back many years, hosted in turn by one of the lodges.",
@@ -321,7 +328,7 @@ history_body = """
        "Louis Marchesi Lodge takes the Reunion to the seaside at the Anchorage Hotel in Babbacombe, 10&ndash;12 May 2024: a pre-tour for early arrivals, a Lodge meeting at St Marychurch Masonic Hall, a ladies&rsquo; dinner hosted by former members of Ladies Circle, beach games and a fish and chip lunch at Paignton, and a gala dinner to finish.",
        "Hosted by No. 9558", kind="reunion"),
     ev("2026", "Biennial Reunion in Cardiff",
-       "The Lodge of Round Table hosts the Biennial Reunion in Cardiff, 15&ndash;17 May 2026: a Lodge Installation Meeting at Cardiff Masonic Hall, a private tour of Cardiff Castle and a black-tie gala dinner at Cornerstone.",
+       "Twenty years after it last hosted, the Lodge of Round Table welcomes the Reunion back to Cardiff, 15&ndash;17 May 2026: a Lodge Installation Meeting at Cardiff Masonic Hall, a private tour of Cardiff Castle and a black-tie gala dinner at Cornerstone.",
        '<a href="/cardiff-2026/">Cardiff 2026</a> &middot; Hosted by No. 9549', kind="reunion"),
 ]) + """
 <section class="section alt">
