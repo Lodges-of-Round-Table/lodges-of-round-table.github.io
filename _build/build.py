@@ -47,7 +47,10 @@ def page(path, title, body, active="", description="", hero=None):
 <meta name="description" content="{description or 'Lodges of Round Table: Masonic lodges founded by members of the Round Table movement.'}">
 <meta property="og:title" content="{full_title}">
 <meta property="og:image" content="https://www.lodgesofroundtable.uk/images/logo.png">
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#13233f">
 <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
