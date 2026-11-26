@@ -196,6 +196,7 @@ page("lodges", "The Lodges", """
         <tr><td>West Essex Round Table Lodge <span class="check" title="Found in historical records only; please confirm it still meets">&dagger;</span></td><td>9310</td><td>Chingford</td><td>Essex</td><td>&ndash;</td></tr>
         <tr><td>Lodge of King Arthur</td><td>9311</td><td><em>To confirm</em> (members in West Yorkshire)</td><td><em>To confirm</em></td><td>&ndash;</td></tr>
         <tr><td>Round Table Lodge of Oxfordshire</td><td>9509</td><td>Oxfordshire</td><td>Oxfordshire</td><td><a href="https://roundtablelodgeoxon.com/">Website</a></td></tr>
+        <tr><td>Louis Marchesi Lodge <span class="muted small">(named after Round Table&rsquo;s founder)</span></td><td>9558</td><td>Uffculme</td><td>Devonshire</td><td>&ndash;</td></tr>
         <tr><td>North Essex Round Table Lodge <span class="check" title="Found in historical records only; please confirm it still meets">&dagger;</span></td><td>9578</td><td>Clacton-on-Sea</td><td>Essex</td><td>&ndash;</td></tr>
         <tr><td>Ridings Tablers Lodge</td><td>9586</td><td>Beverley</td><td>Yorkshire North &amp; East Ridings</td><td><a href="https://justbeverley.co.uk/articles/ridings-tablers-lodge">Profile</a></td></tr>
         <tr><td>Round Table Thames Valley Lodge</td><td>9697</td><td>Henley-on-Thames</td><td>Oxfordshire</td><td><a href="https://henleyfreemasons.uk/round-table-thames-valley-lodge-no-9697/">Website</a></td></tr>
@@ -220,12 +221,16 @@ page("lodges", "The Lodges", """
 """, active="lodges", description="A directory of the Lodges of Round Table.")
 
 # ---------------------------------------------------------------- History
-def ev(year, title, text, lodges="", confirm=False):
+def ev(year, title, text, lodges="", confirm=False, kind="lodge"):
     tag = ' <span class="tbc">to confirm</span>' if confirm else ''
+    import re as _re
+    y = _re.search(r"\d{4}", year); y = y.group(0) if y else "2026"
+    eid = "y" + y + "-" + _re.sub(r"[^a-z]+", "-", _re.sub(r"&[a-z]+;", "", title.lower())).strip("-")[:30]
+    label = {"lodge": "Lodges", "reunion": "Reunion", "rt": "Round Table"}[kind]
     return f"""
-      <li class="ev">
+      <li class="ev ev-{kind}" id="{eid}" data-kind="{kind}" data-year="{y}" data-title="{_re.sub(r'<[^>]+>', '', title)}">
         <div class="ev-year">{year}</div>
-        <div class="ev-body"><h3>{title}{tag}</h3><p>{text}</p>{f'<p class="ev-lodges">{lodges}</p>' if lodges else ''}</div>
+        <div class="ev-body"><span class="ev-kind">{label}</span><h3>{title}{tag}</h3><p>{text}</p>{f'<p class="ev-lodges">{lodges}</p>' if lodges else ''}</div>
       </li>"""
 
 def era(name, intro, events):
@@ -243,12 +248,29 @@ history_body = """
 <section class="section">
   <div class="wrap narrow prose">
     <p class="lede-dark">Round Table was built for young men, and it has always had an upper age limit. As Tablers reached it, many looked for a way to keep the friendships and the spirit of service going. Some joined 41 Club; others, who were also Freemasons, started lodges of their own. Over eighty years those lodges have grown into a network across England and Wales and beyond, meeting every two years at the Biennial Reunion.</p>
-    <p class="muted small">This page is a first draft put together from lodge and provincial websites and published lodge records. Dates are given where a source states them. If you can correct or add to it, please <a href="/contact-us/">get in touch</a>.</p>
+    <p class="muted small">This page is a first draft put together from lodge and provincial websites, published lodge records and Reunion papers. Dates are given where a source states them. If you can correct or add to it, please <a href="/contact-us/">get in touch</a>.</p>
+  </div>
+</section>
+<section class="explorer" aria-label="Timeline explorer">
+  <div class="wrap narrow">
+    <div class="filters" role="group" aria-label="Show">
+      <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">Everything</button>
+      <button type="button" class="chip" data-filter="lodge" aria-pressed="false"><i class="dot dot-lodge"></i>Lodges founded</button>
+      <button type="button" class="chip" data-filter="reunion" aria-pressed="false"><i class="dot dot-reunion"></i>Reunions</button>
+      <button type="button" class="chip" data-filter="rt" aria-pressed="false"><i class="dot dot-rt"></i>Round Table</button>
+    </div>
+    <div class="track" id="track" hidden>
+      <div class="track-line"></div>
+      <div class="track-ticks" id="track-ticks"></div>
+      <div class="track-dots" id="track-dots"></div>
+      <div class="track-tip" id="track-tip" role="status" aria-live="polite"></div>
+    </div>
+    <p class="muted small track-hint">Tap a dot to jump to that moment.</p>
   </div>
 </section>
 """ + era("Beginnings", "", [
     ev("1927", "Round Table is founded in Norwich",
-       "Louis Marchesi starts the first Round Table in Norwich as a club where young business and professional men can meet, make friends and serve their community. The movement spreads quickly across Britain and abroad."),
+       "Louis Marchesi starts the first Round Table in Norwich as a club where young business and professional men can meet, make friends and serve their community. The movement spreads quickly across Britain and abroad.", kind="rt"),
     ev("1942", "Astolat Lodge, Guildford",
        "In the middle of the Second World War, a group of Guildford Freemasons plan a new lodge and decide that its first members should come, as far as possible, from past and present Round Tablers. It takes its name from Astolat, the Arthurian name for Guildford. Warranted in April and consecrated in May 1942, it is the earliest lodge with Round Table roots that we know of.",
        "Astolat Lodge No. 5848 &middot; Surrey"),
@@ -280,8 +302,8 @@ history_body = """
        "The Round Table Lodge of Oxfordshire is warranted.",
        "Round Table Lodge of Oxfordshire No. 9509"),
     ev("1994", "Cardiff and North Essex",
-       "The Lodge of Round Table is founded in Cardiff, bringing the network to Wales. In December North Essex Round Table Lodge is warranted at Clacton-on-Sea.",
-       "Lodge of Round Table No. 9549 &middot; North Essex Round Table Lodge No. 9578"),
+       "The Lodge of Round Table is founded in Cardiff, bringing the network to Wales. Louis Marchesi Lodge in Devon, named after the founder of Round Table, follows around the same time, and in December North Essex Round Table Lodge is warranted at Clacton-on-Sea.",
+       "Lodge of Round Table No. 9549 &middot; Louis Marchesi Lodge No. 9558 &middot; North Essex Round Table Lodge No. 9578"),
     ev("1990s", "Ridings Tablers, Beverley",
        "Ridings Tablers Lodge brings the network to East Yorkshire.",
        "Ridings Tablers Lodge No. 9586"),
@@ -291,13 +313,16 @@ history_body = """
 ]) + era("Today", "", [
     ev("Now", "Almost fifty lodges",
        "There are now almost fifty Round Table lodges in England and Wales. Many no longer recruit only from Round Table, but they keep its traditions: fun and fellowship alongside service to the community, and a warm welcome for visitors. Every two years the lodges come together for the Biennial Reunion, a tradition that goes back many years, hosted in turn by one of the lodges.",
-       '<a href="/lodges/">See the directory of lodges</a>'),
+       '<a href="/lodges/">See the directory of lodges</a>', kind="rt"),
     ev("2022", "Biennial Reunion at Crewe Hall",
        "North Staffordshire Round Table Lodge hosts the Round Table Lodges Biennial weekend at Crewe Hall, 10&ndash;12 June 2022.",
-       "Hosted by No. 8355"),
+       "Hosted by No. 8355", kind="reunion"),
+    ev("2024", "Biennial Reunion in Torquay",
+       "Louis Marchesi Lodge takes the Reunion to the seaside at the Anchorage Hotel in Babbacombe, 10&ndash;12 May 2024: a pre-tour for early arrivals, a Lodge meeting at St Marychurch Masonic Hall, a ladies&rsquo; dinner hosted by former members of Ladies Circle, beach games and a fish and chip lunch at Paignton, and a gala dinner to finish.",
+       "Hosted by No. 9558", kind="reunion"),
     ev("2026", "Biennial Reunion in Cardiff",
        "The Lodge of Round Table hosts the Biennial Reunion in Cardiff, 15&ndash;17 May 2026: a Lodge Installation Meeting at Cardiff Masonic Hall, a private tour of Cardiff Castle and a black-tie gala dinner at Cornerstone.",
-       '<a href="/cardiff-2026/">Cardiff 2026</a> &middot; Hosted by No. 9549'),
+       '<a href="/cardiff-2026/">Cardiff 2026</a> &middot; Hosted by No. 9549', kind="reunion"),
 ]) + """
 <section class="section alt">
   <div class="wrap narrow prose small-prose">
@@ -315,9 +340,55 @@ history_body = """
       <li><a href="https://www.somersetfreemasons.org/?p=1728">Somerset Tablers Lodge No. 9075</a></li>
       <li><a href="https://pglherts.org/province/lodges/round-table-lodge-of-hertfordshire/">Round Table Lodge of Hertfordshire No. 9221</a></li>
       <li><a href="https://henleyfreemasons.uk/round-table-thames-valley-lodge-no-9697/">Round Table Thames Valley Lodge No. 9697</a></li>
+      <li>Louis Marchesi Lodge No. 9558: Reunion flyer and booking details, 2024</li>
     </ul>
   </div>
 </section>
+<script>
+(function(){
+  var evs=[].slice.call(document.querySelectorAll('.ev'));
+  var track=document.getElementById('track'),dotsBox=document.getElementById('track-dots'),ticks=document.getElementById('track-ticks'),tip=document.getElementById('track-tip');
+  var START=1920,END=2030,pct=function(y){return (y-START)/(END-START)*100;};
+  track.hidden=false;
+  for(var d=START;d<=END;d+=10){var t=document.createElement('span');t.style.left=pct(d)+'%';t.textContent=d;ticks.appendChild(t);}
+  // stack dots that share a year-ish slot
+  var used={};
+  evs.forEach(function(ev){
+    var y=+ev.dataset.year,slot=Math.round(pct(y)),row=used[slot]=(used[slot]||0)+1;
+    var b=document.createElement('button');b.type='button';b.className='tdot tdot-'+ev.dataset.kind;
+    b.style.left=pct(y)+'%';b.style.bottom=(14+(row-1)*14)+'px';
+    b.setAttribute('aria-label',ev.querySelector('.ev-year').textContent+': '+ev.dataset.title);
+    b.dataset.target=ev.id;b.dataset.kind=ev.dataset.kind;
+    var show=function(){tip.textContent=ev.querySelector('.ev-year').textContent+' \u00b7 '+ev.dataset.title;tip.style.left=Math.min(Math.max(pct(y),12),88)+'%';tip.classList.add('on');};
+    b.addEventListener('mouseenter',show);b.addEventListener('focus',show);
+    b.addEventListener('mouseleave',function(){tip.classList.remove('on');});
+    b.addEventListener('click',function(){
+      ev.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+      ev.classList.remove('flash');void ev.offsetWidth;ev.classList.add('flash');
+    });
+    dotsBox.appendChild(b);
+  });
+  // filters
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var f=c.dataset.filter;
+    chips.forEach(function(x){var on=x===c;x.classList.toggle('is-on',on);x.setAttribute('aria-pressed',on);});
+    evs.forEach(function(ev){ev.hidden=!(f==='all'||ev.dataset.kind===f);});
+    [].forEach.call(dotsBox.children,function(b){b.classList.toggle('dim',!(f==='all'||b.dataset.kind===f));});
+    [].forEach.call(document.querySelectorAll('.era'),function(era){era.hidden=!era.querySelector('.ev:not([hidden])');});
+  });});
+  // reveal on scroll + highlight active dot
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('seen');
+        [].forEach.call(dotsBox.children,function(b){b.classList.toggle('active',b.dataset.target===e.target.id);});}
+    });},{rootMargin:'-40% 0px -40% 0px'});
+    evs.forEach(function(ev){ev.classList.add('reveal');io.observe(ev);});
+    var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('seen');});},{rootMargin:'0px 0px -10% 0px'});
+    evs.forEach(function(ev){io2.observe(ev);});
+  }
+})();
+</script>
 """
 page("history", "History", history_body, active="history",
      description="A history of the Lodges of Round Table, from Astolat Lodge in 1942 to the Biennial Reunions of today.",

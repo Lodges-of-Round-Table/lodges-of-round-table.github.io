@@ -140,3 +140,37 @@ table.lodges { width: 100%; border-collapse: collapse; font-size: .97rem; }
 .tbc { font-family: var(--sans); font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; background: var(--gold-soft); color: #8a6a1f; border-radius: 999px; padding: .15rem .55rem; vertical-align: middle; margin-left: .4rem; }
 .small-prose { font-size: .95rem; }
 @media (max-width: 640px) { .ev { grid-template-columns: 1fr; gap: .2rem; } }
+
+/* Timeline explorer */
+.explorer { position: sticky; top: 76px; z-index: 4; background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); padding: .9rem 0 .4rem; }
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip { font: 600 .85rem var(--sans); border: 1px solid var(--line); background: #fff; color: var(--navy); border-radius: 999px; padding: .4rem .9rem; cursor: pointer; display: inline-flex; align-items: center; gap: .45rem; }
+.chip:hover { border-color: var(--gold); }
+.chip.is-on { background: var(--navy); color: #fff; border-color: var(--navy); }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot-lodge, .tdot-lodge { background: var(--gold); }
+.dot-reunion, .tdot-reunion { background: #b4232c; }
+.dot-rt, .tdot-rt { background: var(--navy-2); }
+.track { position: relative; height: 86px; margin-top: .6rem; }
+.track-line { position: absolute; left: 0; right: 0; bottom: 30px; height: 2px; background: var(--line); }
+.track-ticks span { position: absolute; bottom: 8px; transform: translateX(-50%); font-size: .7rem; color: var(--muted); }
+.track-ticks span::before { content: ""; position: absolute; left: 50%; bottom: 16px; width: 1px; height: 8px; background: var(--line); }
+.tdot { position: absolute; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(19,35,63,.25); cursor: pointer; padding: 0; transition: transform .15s, opacity .2s; }
+.tdot { bottom: 14px; }
+.track-dots { position: absolute; inset: 0 0 18px 0; }
+.tdot:hover, .tdot:focus-visible, .tdot.active { transform: scale(1.5); z-index: 2; outline: none; }
+.tdot.dim { opacity: .15; pointer-events: none; }
+.track-tip { position: absolute; top: -4px; transform: translateX(-50%); background: var(--navy); color: #fff; font-size: .78rem; padding: .25rem .6rem; border-radius: 6px; white-space: nowrap; opacity: 0; transition: opacity .15s; pointer-events: none; }
+.track-tip.on { opacity: 1; }
+.track-hint { margin: 0; text-align: right; font-size: .75rem; }
+.ev-kind { display: inline-block; font: 600 .68rem var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: .2rem; }
+.ev-reunion::before { border-color: #b4232c; }
+.ev-rt::before { border-color: var(--navy-2); }
+.ev-reunion .ev-kind { color: #b4232c; }
+.ev { scroll-margin-top: 220px; border-radius: 8px; }
+.ev.flash .ev-body { animation: flash 1.6s ease-out; }
+@keyframes flash { 0% { background: var(--gold-soft); } 100% { background: transparent; } }
+.ev.reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.ev.reveal.seen { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .ev.reveal { opacity: 1; transform: none; transition: none; } }
+@media (max-width: 640px) { .explorer { top: 0; position: relative; } .track-ticks span:nth-child(even) { display: none; } }

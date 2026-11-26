@@ -38,7 +38,24 @@
 <section class="section">
   <div class="wrap narrow prose">
     <p class="lede-dark">Round Table was built for young men, and it has always had an upper age limit. As Tablers reached it, many looked for a way to keep the friendships and the spirit of service going. Some joined 41 Club; others, who were also Freemasons, started lodges of their own. Over eighty years those lodges have grown into a network across England and Wales and beyond, meeting every two years at the Biennial Reunion.</p>
-    <p class="muted small">This page is a first draft put together from lodge and provincial websites and published lodge records. Dates are given where a source states them. If you can correct or add to it, please <a href="/contact-us/">get in touch</a>.</p>
+    <p class="muted small">This page is a first draft put together from lodge and provincial websites, published lodge records and Reunion papers. Dates are given where a source states them. If you can correct or add to it, please <a href="/contact-us/">get in touch</a>.</p>
+  </div>
+</section>
+<section class="explorer" aria-label="Timeline explorer">
+  <div class="wrap narrow">
+    <div class="filters" role="group" aria-label="Show">
+      <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">Everything</button>
+      <button type="button" class="chip" data-filter="lodge" aria-pressed="false"><i class="dot dot-lodge"></i>Lodges founded</button>
+      <button type="button" class="chip" data-filter="reunion" aria-pressed="false"><i class="dot dot-reunion"></i>Reunions</button>
+      <button type="button" class="chip" data-filter="rt" aria-pressed="false"><i class="dot dot-rt"></i>Round Table</button>
+    </div>
+    <div class="track" id="track" hidden>
+      <div class="track-line"></div>
+      <div class="track-ticks" id="track-ticks"></div>
+      <div class="track-dots" id="track-dots"></div>
+      <div class="track-tip" id="track-tip" role="status" aria-live="polite"></div>
+    </div>
+    <p class="muted small track-hint">Tap a dot to jump to that moment.</p>
   </div>
 </section>
 
@@ -47,21 +64,21 @@
       <h2>Beginnings</h2>
 
       <ol class="timeline">
-      <li class="ev">
+      <li class="ev ev-rt" id="y1927-round-table-is-founded-in-norw" data-kind="rt" data-year="1927" data-title="Round Table is founded in Norwich">
         <div class="ev-year">1927</div>
-        <div class="ev-body"><h3>Round Table is founded in Norwich</h3><p>Louis Marchesi starts the first Round Table in Norwich as a club where young business and professional men can meet, make friends and serve their community. The movement spreads quickly across Britain and abroad.</p></div>
+        <div class="ev-body"><span class="ev-kind">Round Table</span><h3>Round Table is founded in Norwich</h3><p>Louis Marchesi starts the first Round Table in Norwich as a club where young business and professional men can meet, make friends and serve their community. The movement spreads quickly across Britain and abroad.</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1942-astolat-lodge-guildford" data-kind="lodge" data-year="1942" data-title="Astolat Lodge, Guildford">
         <div class="ev-year">1942</div>
-        <div class="ev-body"><h3>Astolat Lodge, Guildford</h3><p>In the middle of the Second World War, a group of Guildford Freemasons plan a new lodge and decide that its first members should come, as far as possible, from past and present Round Tablers. It takes its name from Astolat, the Arthurian name for Guildford. Warranted in April and consecrated in May 1942, it is the earliest lodge with Round Table roots that we know of.</p><p class="ev-lodges">Astolat Lodge No. 5848 &middot; Surrey</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Astolat Lodge, Guildford</h3><p>In the middle of the Second World War, a group of Guildford Freemasons plan a new lodge and decide that its first members should come, as far as possible, from past and present Round Tablers. It takes its name from Astolat, the Arthurian name for Guildford. Warranted in April and consecrated in May 1942, it is the earliest lodge with Round Table roots that we know of.</p><p class="ev-lodges">Astolat Lodge No. 5848 &middot; Surrey</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1951-lodge-of-harmony-bristol" data-kind="lodge" data-year="1951" data-title="Lodge of Harmony, Bristol">
         <div class="ev-year">1951&ndash;52</div>
-        <div class="ev-body"><h3>Lodge of Harmony, Bristol</h3><p>Bristol&rsquo;s Round Tables ask for a lodge of their own. Lodge of Harmony is established in 1951 and consecrated in January 1952, still meeting today at Freemasons&rsquo; Hall in Park Street.</p><p class="ev-lodges">Lodge of Harmony No. 7127 &middot; Bristol</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Lodge of Harmony, Bristol</h3><p>Bristol&rsquo;s Round Tables ask for a lodge of their own. Lodge of Harmony is established in 1951 and consecrated in January 1952, still meeting today at Freemasons&rsquo; Hall in Park Street.</p><p class="ev-lodges">Lodge of Harmony No. 7127 &middot; Bristol</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1958-the-round-table-name-arrives" data-kind="lodge" data-year="1958" data-title="The Round Table name arrives">
         <div class="ev-year">1958</div>
-        <div class="ev-body"><h3>The Round Table name arrives</h3><p>Round Table Lodge in London is warranted, the earliest lodge we have found that carries the Round Table name itself. In the years that follow, lodges of the Round Table are formed in Leicester, Worcestershire and Sussex.</p><p class="ev-lodges">Round Table Lodge No. 7619 &middot; Lodge of the Round Table No. 7762 &middot; Lodge of the Round Table No. 7961 &middot; Round Table Lodge of Sussex No. 7965</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>The Round Table name arrives</h3><p>Round Table Lodge in London is warranted, the earliest lodge we have found that carries the Round Table name itself. In the years that follow, lodges of the Round Table are formed in Leicester, Worcestershire and Sussex.</p><p class="ev-lodges">Round Table Lodge No. 7619 &middot; Lodge of the Round Table No. 7762 &middot; Lodge of the Round Table No. 7961 &middot; Round Table Lodge of Sussex No. 7965</p></div>
       </li>
       </ol>
     </div>
@@ -71,17 +88,17 @@
       <h2>Growth</h2>
       <p class="era-intro">From the mid-1960s, new lodges appear across the country, usually founded by members of the local Round Tables and often taking the name of their county.</p>
       <ol class="timeline">
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1966-lancashire-essex-lincolnshire-" data-kind="lodge" data-year="1966" data-title="Lancashire, Essex, Lincolnshire, Staffordshire and Middlesex">
         <div class="ev-year">1966&ndash;69</div>
-        <div class="ev-body"><h3>Lancashire, Essex, Lincolnshire, Staffordshire and Middlesex</h3><p>Round Table Lodge at Cleveleys is warranted in 1966. In 1968 the Round Table Lodges of Essex (Hutton) and Lincolnshire (Horncastle) follow, the latter founded by former Tablers wanting to combine Round Table camaraderie with Freemasonry. Lodges at Wednesbury and in Middlesex follow in 1969.</p><p class="ev-lodges">Nos. 8111, 8217, 8240, 8273 &middot; Round Table Lodge of Middlesex No. 8301</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Lancashire, Essex, Lincolnshire, Staffordshire and Middlesex</h3><p>Round Table Lodge at Cleveleys is warranted in 1966. In 1968 the Round Table Lodges of Essex (Hutton) and Lincolnshire (Horncastle) follow, the latter founded by former Tablers wanting to combine Round Table camaraderie with Freemasonry. Lodges at Wednesbury and in Middlesex follow in 1969.</p><p class="ev-lodges">Nos. 8111, 8217, 8240, 8273 &middot; Round Table Lodge of Middlesex No. 8301</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1971-north-staffordshire" data-kind="lodge" data-year="1971" data-title="North Staffordshire">
         <div class="ev-year">1971</div>
-        <div class="ev-body"><h3>North Staffordshire</h3><p>North Staffordshire Round Table Lodge is founded in Stoke-on-Trent; it marked its fiftieth anniversary in 2021.</p><p class="ev-lodges">North Staffordshire Round Table Lodge No. 8355</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>North Staffordshire</h3><p>North Staffordshire Round Table Lodge is founded in Stoke-on-Trent; it marked its fiftieth anniversary in 2021.</p><p class="ev-lodges">North Staffordshire Round Table Lodge No. 8355</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1970-warwickshire-norfolk-nottingha" data-kind="lodge" data-year="1970" data-title="Warwickshire, Norfolk, Nottinghamshire, Kent, Derbyshire and Cheshire">
         <div class="ev-year">1970s</div>
-        <div class="ev-body"><h3>Warwickshire, Norfolk, Nottinghamshire, Kent, Derbyshire and Cheshire</h3><p>The Lodge of Round Table in Warwickshire is followed by the Round Table Lodges of Norfolk and Nottinghamshire (both 1974). In 1976 Kentish Round Table Lodge is formed by members of Round Tables in West Kent, and the Round Table Lodge of Derbyshire by ex-Tablers looking to carry on their purpose. The Round Table Lodge of South Cheshire follows in 1977.</p><p class="ev-lodges">Nos. 8424, 8600, 8604, 8685, 8725, 8787</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Warwickshire, Norfolk, Nottinghamshire, Kent, Derbyshire and Cheshire</h3><p>The Lodge of Round Table in Warwickshire is followed by the Round Table Lodges of Norfolk and Nottinghamshire (both 1974). In 1976 Kentish Round Table Lodge is formed by members of Round Tables in West Kent, and the Round Table Lodge of Derbyshire by ex-Tablers looking to carry on their purpose. The Round Table Lodge of South Cheshire follows in 1977.</p><p class="ev-lodges">Nos. 8424, 8600, 8604, 8685, 8725, 8787</p></div>
       </li>
       </ol>
     </div>
@@ -91,13 +108,13 @@
       <h2>The 1980s</h2>
 
       <ol class="timeline">
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1981-surrey-gloucestershire-south-d" data-kind="lodge" data-year="1981" data-title="Surrey, Gloucestershire, South Derbyshire and Somerset">
         <div class="ev-year">1981&ndash;83</div>
-        <div class="ev-body"><h3>Surrey, Gloucestershire, South Derbyshire and Somerset</h3><p>Table Fellowship Lodge is consecrated in November 1981 by Surrey Freemasons and Round Tablers. Gloucestershire Round Table Lodge is consecrated in January 1982. In 1983 Burton-upon-Trent Tablers found the Round Table Lodge of South Derbyshire, and Somerset Tablers Lodge is founded by members of Round Table Area 37, which then covered the whole county.</p><p class="ev-lodges">Nos. 8989, 9017, 9074, 9075</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Surrey, Gloucestershire, South Derbyshire and Somerset</h3><p>Table Fellowship Lodge is consecrated in November 1981 by Surrey Freemasons and Round Tablers. Gloucestershire Round Table Lodge is consecrated in January 1982. In 1983 Burton-upon-Trent Tablers found the Round Table Lodge of South Derbyshire, and Somerset Tablers Lodge is founded by members of Round Table Area 37, which then covered the whole county.</p><p class="ev-lodges">Nos. 8989, 9017, 9074, 9075</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1984-shropshire-hertfordshire-suffo" data-kind="lodge" data-year="1984" data-title="Shropshire, Hertfordshire, Suffolk, Essex and Yorkshire">
         <div class="ev-year">1984&ndash;88</div>
-        <div class="ev-body"><h3>Shropshire, Hertfordshire, Suffolk, Essex and Yorkshire</h3><p>Shropshire Round Table Lodge is followed by the Round Table Lodge of Hertfordshire, consecrated in St Albans in April 1987, and in 1988 by the Round Table Lodge of Suffolk and West Essex Round Table Lodge. The Lodge of King Arthur, whose members come from the Yorkshire and Lancashire Tables, also dates from this period.</p><p class="ev-lodges">Nos. 9104, 9221, 9276, 9310, 9311</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Shropshire, Hertfordshire, Suffolk, Essex and Yorkshire</h3><p>Shropshire Round Table Lodge is followed by the Round Table Lodge of Hertfordshire, consecrated in St Albans in April 1987, and in 1988 by the Round Table Lodge of Suffolk and West Essex Round Table Lodge. The Lodge of King Arthur, whose members come from the Yorkshire and Lancashire Tables, also dates from this period.</p><p class="ev-lodges">Nos. 9104, 9221, 9276, 9310, 9311</p></div>
       </li>
       </ol>
     </div>
@@ -107,21 +124,21 @@
       <h2>The 1990s</h2>
 
       <ol class="timeline">
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1993-oxfordshire" data-kind="lodge" data-year="1993" data-title="Oxfordshire">
         <div class="ev-year">1993</div>
-        <div class="ev-body"><h3>Oxfordshire</h3><p>The Round Table Lodge of Oxfordshire is warranted.</p><p class="ev-lodges">Round Table Lodge of Oxfordshire No. 9509</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Oxfordshire</h3><p>The Round Table Lodge of Oxfordshire is warranted.</p><p class="ev-lodges">Round Table Lodge of Oxfordshire No. 9509</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1994-cardiff-and-north-essex" data-kind="lodge" data-year="1994" data-title="Cardiff and North Essex">
         <div class="ev-year">1994</div>
-        <div class="ev-body"><h3>Cardiff and North Essex</h3><p>The Lodge of Round Table is founded in Cardiff, bringing the network to Wales. In December North Essex Round Table Lodge is warranted at Clacton-on-Sea.</p><p class="ev-lodges">Lodge of Round Table No. 9549 &middot; North Essex Round Table Lodge No. 9578</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Cardiff and North Essex</h3><p>The Lodge of Round Table is founded in Cardiff, bringing the network to Wales. Louis Marchesi Lodge in Devon, named after the founder of Round Table, follows around the same time, and in December North Essex Round Table Lodge is warranted at Clacton-on-Sea.</p><p class="ev-lodges">Lodge of Round Table No. 9549 &middot; Louis Marchesi Lodge No. 9558 &middot; North Essex Round Table Lodge No. 9578</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1990-ridings-tablers-beverley" data-kind="lodge" data-year="1990" data-title="Ridings Tablers, Beverley">
         <div class="ev-year">1990s</div>
-        <div class="ev-body"><h3>Ridings Tablers, Beverley</h3><p>Ridings Tablers Lodge brings the network to East Yorkshire.</p><p class="ev-lodges">Ridings Tablers Lodge No. 9586</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Ridings Tablers, Beverley</h3><p>Ridings Tablers Lodge brings the network to East Yorkshire.</p><p class="ev-lodges">Ridings Tablers Lodge No. 9586</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-lodge" id="y1999-thames-valley-and-nairobi" data-kind="lodge" data-year="1999" data-title="Thames Valley and Nairobi">
         <div class="ev-year">1999</div>
-        <div class="ev-body"><h3>Thames Valley and Nairobi</h3><p>Round Table Thames Valley Lodge is established at Henley-on-Thames as a home for Tablers, ex-Tablers and those who &lsquo;should have been Tablers&rsquo;. The same year a Round Table Lodge is warranted in Nairobi, Kenya.</p><p class="ev-lodges">Round Table Thames Valley Lodge No. 9697 &middot; Round Table Lodge No. 9711</p></div>
+        <div class="ev-body"><span class="ev-kind">Lodges</span><h3>Thames Valley and Nairobi</h3><p>Round Table Thames Valley Lodge is established at Henley-on-Thames as a home for Tablers, ex-Tablers and those who &lsquo;should have been Tablers&rsquo;. The same year a Round Table Lodge is warranted in Nairobi, Kenya.</p><p class="ev-lodges">Round Table Thames Valley Lodge No. 9697 &middot; Round Table Lodge No. 9711</p></div>
       </li>
       </ol>
     </div>
@@ -131,17 +148,21 @@
       <h2>Today</h2>
 
       <ol class="timeline">
-      <li class="ev">
+      <li class="ev ev-rt" id="y2026-almost-fifty-lodges" data-kind="rt" data-year="2026" data-title="Almost fifty lodges">
         <div class="ev-year">Now</div>
-        <div class="ev-body"><h3>Almost fifty lodges</h3><p>There are now almost fifty Round Table lodges in England and Wales. Many no longer recruit only from Round Table, but they keep its traditions: fun and fellowship alongside service to the community, and a warm welcome for visitors. Every two years the lodges come together for the Biennial Reunion, a tradition that goes back many years, hosted in turn by one of the lodges.</p><p class="ev-lodges"><a href="/lodges/">See the directory of lodges</a></p></div>
+        <div class="ev-body"><span class="ev-kind">Round Table</span><h3>Almost fifty lodges</h3><p>There are now almost fifty Round Table lodges in England and Wales. Many no longer recruit only from Round Table, but they keep its traditions: fun and fellowship alongside service to the community, and a warm welcome for visitors. Every two years the lodges come together for the Biennial Reunion, a tradition that goes back many years, hosted in turn by one of the lodges.</p><p class="ev-lodges"><a href="/lodges/">See the directory of lodges</a></p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-reunion" id="y2022-biennial-reunion-at-crewe-hall" data-kind="reunion" data-year="2022" data-title="Biennial Reunion at Crewe Hall">
         <div class="ev-year">2022</div>
-        <div class="ev-body"><h3>Biennial Reunion at Crewe Hall</h3><p>North Staffordshire Round Table Lodge hosts the Round Table Lodges Biennial weekend at Crewe Hall, 10&ndash;12 June 2022.</p><p class="ev-lodges">Hosted by No. 8355</p></div>
+        <div class="ev-body"><span class="ev-kind">Reunion</span><h3>Biennial Reunion at Crewe Hall</h3><p>North Staffordshire Round Table Lodge hosts the Round Table Lodges Biennial weekend at Crewe Hall, 10&ndash;12 June 2022.</p><p class="ev-lodges">Hosted by No. 8355</p></div>
       </li>
-      <li class="ev">
+      <li class="ev ev-reunion" id="y2024-biennial-reunion-in-torquay" data-kind="reunion" data-year="2024" data-title="Biennial Reunion in Torquay">
+        <div class="ev-year">2024</div>
+        <div class="ev-body"><span class="ev-kind">Reunion</span><h3>Biennial Reunion in Torquay</h3><p>Louis Marchesi Lodge takes the Reunion to the seaside at the Anchorage Hotel in Babbacombe, 10&ndash;12 May 2024: a pre-tour for early arrivals, a Lodge meeting at St Marychurch Masonic Hall, a ladies&rsquo; dinner hosted by former members of Ladies Circle, beach games and a fish and chip lunch at Paignton, and a gala dinner to finish.</p><p class="ev-lodges">Hosted by No. 9558</p></div>
+      </li>
+      <li class="ev ev-reunion" id="y2026-biennial-reunion-in-cardiff" data-kind="reunion" data-year="2026" data-title="Biennial Reunion in Cardiff">
         <div class="ev-year">2026</div>
-        <div class="ev-body"><h3>Biennial Reunion in Cardiff</h3><p>The Lodge of Round Table hosts the Biennial Reunion in Cardiff, 15&ndash;17 May 2026: a Lodge Installation Meeting at Cardiff Masonic Hall, a private tour of Cardiff Castle and a black-tie gala dinner at Cornerstone.</p><p class="ev-lodges"><a href="/cardiff-2026/">Cardiff 2026</a> &middot; Hosted by No. 9549</p></div>
+        <div class="ev-body"><span class="ev-kind">Reunion</span><h3>Biennial Reunion in Cardiff</h3><p>The Lodge of Round Table hosts the Biennial Reunion in Cardiff, 15&ndash;17 May 2026: a Lodge Installation Meeting at Cardiff Masonic Hall, a private tour of Cardiff Castle and a black-tie gala dinner at Cornerstone.</p><p class="ev-lodges"><a href="/cardiff-2026/">Cardiff 2026</a> &middot; Hosted by No. 9549</p></div>
       </li>
       </ol>
     </div>
@@ -162,9 +183,55 @@
       <li><a href="https://www.somersetfreemasons.org/?p=1728">Somerset Tablers Lodge No. 9075</a></li>
       <li><a href="https://pglherts.org/province/lodges/round-table-lodge-of-hertfordshire/">Round Table Lodge of Hertfordshire No. 9221</a></li>
       <li><a href="https://henleyfreemasons.uk/round-table-thames-valley-lodge-no-9697/">Round Table Thames Valley Lodge No. 9697</a></li>
+      <li>Louis Marchesi Lodge No. 9558: Reunion flyer and booking details, 2024</li>
     </ul>
   </div>
 </section>
+<script>
+(function(){
+  var evs=[].slice.call(document.querySelectorAll('.ev'));
+  var track=document.getElementById('track'),dotsBox=document.getElementById('track-dots'),ticks=document.getElementById('track-ticks'),tip=document.getElementById('track-tip');
+  var START=1920,END=2030,pct=function(y){return (y-START)/(END-START)*100;};
+  track.hidden=false;
+  for(var d=START;d<=END;d+=10){var t=document.createElement('span');t.style.left=pct(d)+'%';t.textContent=d;ticks.appendChild(t);}
+  // stack dots that share a year-ish slot
+  var used={};
+  evs.forEach(function(ev){
+    var y=+ev.dataset.year,slot=Math.round(pct(y)),row=used[slot]=(used[slot]||0)+1;
+    var b=document.createElement('button');b.type='button';b.className='tdot tdot-'+ev.dataset.kind;
+    b.style.left=pct(y)+'%';b.style.bottom=(14+(row-1)*14)+'px';
+    b.setAttribute('aria-label',ev.querySelector('.ev-year').textContent+': '+ev.dataset.title);
+    b.dataset.target=ev.id;b.dataset.kind=ev.dataset.kind;
+    var show=function(){tip.textContent=ev.querySelector('.ev-year').textContent+' · '+ev.dataset.title;tip.style.left=Math.min(Math.max(pct(y),12),88)+'%';tip.classList.add('on');};
+    b.addEventListener('mouseenter',show);b.addEventListener('focus',show);
+    b.addEventListener('mouseleave',function(){tip.classList.remove('on');});
+    b.addEventListener('click',function(){
+      ev.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+      ev.classList.remove('flash');void ev.offsetWidth;ev.classList.add('flash');
+    });
+    dotsBox.appendChild(b);
+  });
+  // filters
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var f=c.dataset.filter;
+    chips.forEach(function(x){var on=x===c;x.classList.toggle('is-on',on);x.setAttribute('aria-pressed',on);});
+    evs.forEach(function(ev){ev.hidden=!(f==='all'||ev.dataset.kind===f);});
+    [].forEach.call(dotsBox.children,function(b){b.classList.toggle('dim',!(f==='all'||b.dataset.kind===f));});
+    [].forEach.call(document.querySelectorAll('.era'),function(era){era.hidden=!era.querySelector('.ev:not([hidden])');});
+  });});
+  // reveal on scroll + highlight active dot
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('seen');
+        [].forEach.call(dotsBox.children,function(b){b.classList.toggle('active',b.dataset.target===e.target.id);});}
+    });},{rootMargin:'-40% 0px -40% 0px'});
+    evs.forEach(function(ev){ev.classList.add('reveal');io.observe(ev);});
+    var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('seen');});},{rootMargin:'0px 0px -10% 0px'});
+    evs.forEach(function(ev){io2.observe(ev);});
+  }
+})();
+</script>
 </main>
 <footer class="site-foot">
   <div class="wrap foot-inner">
